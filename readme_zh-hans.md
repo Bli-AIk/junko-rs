@@ -7,6 +7,8 @@
 
 <sub>*嫦娥啊。你在看着吗！？*</sub>
 
+> 当前状态: 🚧 早期开发中 (Initial version in progress)
+
 </div>
 
 **junko-rs** — 使用 Rust 和 Bevy 重制的东方绀珠传六面。

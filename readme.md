@@ -9,6 +9,8 @@
 
 </div>
 
+> Current Status: 🚧 Early Development (Initial version in progress)
+
 **junko-rs** — A Touhou Legacy of Lunatic Kingdom Stage 6 recreation using Rust and Bevy.
 
 | English | [简体中文](./readme_zh-hans.md) |
