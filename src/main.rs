@@ -1,5 +1,8 @@
+mod debug;
+
 use bevy::prelude::*;
 use bevy::window::{WindowMode, WindowResolution};
+use debug::DebugPlugin;
 
 const BASE_WIDTH: f32 = 320.0;
 const BASE_HEIGHT: f32 = 240.0;
@@ -29,5 +32,6 @@ fn main() {
             }),
             ..default()
         }))
+        .add_plugins(DebugPlugin)
         .run();
 }
