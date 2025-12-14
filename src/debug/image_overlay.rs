@@ -83,9 +83,6 @@ pub mod debug_image_overlay {
                     }
                 }
             } else {
-                for entity in overlay_query.iter() {
-                    commands.entity(entity).despawn();
-                }
                 info!("Debug image overlay: OFF");
             }
         }
@@ -123,16 +120,16 @@ pub mod debug_image_overlay {
                         && file_type.is_file()
                         && let Some(file_name) = entry.file_name().to_str()
                         && let Some(extension) = file_name.split('.').next_back()
-                            && extensions.contains(&extension.to_lowercase().as_str())
-                            && let Ok(metadata) = entry.metadata()
-                            && let Ok(modified) = metadata.modified()
-                        {
-                            let relative_path = format!("debug/{}", file_name);
+                        && extensions.contains(&extension.to_lowercase().as_str())
+                        && let Ok(metadata) = entry.metadata()
+                        && let Ok(modified) = metadata.modified()
+                    {
+                        let relative_path = format!("debug/{}", file_name);
 
-                            if latest_file.is_none() || latest_file.as_ref().unwrap().1 < modified {
-                                latest_file = Some((relative_path, modified));
-                            }
+                        if latest_file.is_none() || latest_file.as_ref().unwrap().1 < modified {
+                            latest_file = Some((relative_path, modified));
                         }
+                    }
                 }
                 if latest_file.is_some() {
                     break;
